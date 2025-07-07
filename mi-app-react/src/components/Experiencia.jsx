@@ -1,32 +1,32 @@
-import React from 'react';
+export default function Experiencia({trabajos}) {
+  const experiencia = [
+    { id: 1, puesto: "Desarrollador Full Stack", empresa: "Navisoft Gaming", periodo: "2022-2024" },
+    { id: 2, puesto: "Instructor TIC", empresa: "SENA", periodo: "2020-2022" }
+  ];
 
-const experiencias = [
-  { cargo: "Desarrollador Front-End", empresa: "TechSoft", año: "2022", descripcion: "Desarrollé interfaces web modernas con React." },
-  { cargo: "Practicante TI", empresa: "SENA", año: "2021", descripcion: "Apoyé en mantenimiento de sistemas internos." },
-  { cargo: "Freelancer Web", empresa: "Independiente", año: "2023", descripcion: "Diseño y desarrollo de landing pages." },
-  { cargo: "Soporte Técnico", empresa: "PC Soluciones", año: "2020", descripcion: "Atención al usuario y configuración de equipos." },
-  { cargo: "Desarrollador Jr.", empresa: "Codex", año: "2024", descripcion: "Colaboración en proyectos con JavaScript y Node.js." },
-  { cargo: "Becario Web", empresa: "Digital School", año: "2023", descripcion: "Creación de ejercicios con HTML y CSS." },
-  { cargo: "Tutor Virtual", empresa: "Educavirtual", año: "2022", descripcion: "Capacitación en herramientas ofimáticas." },
-  { cargo: "Tester QA", empresa: "SoftQA", año: "2023", descripcion: "Revisión y reporte de errores funcionales." },
-  { cargo: "Líder de Proyecto", empresa: "Univ. Virtual", año: "2024", descripcion: "Dirección de equipo en proyectos de formación." },
-  { cargo: "Desarrollador Backend", empresa: "CloudApp", año: "2025", descripcion: "API REST con Express y MongoDB." },
-];
+  
+  if (experiencia.length === 0) {
+    return (
+      <section>
+        <h3>Experiencia Profesional</h3>
+        <p>Diseño e implementación de interfaces web responsivas utilizando React y CSS moderno.</p>
+      </section>
+    );
+  }
 
-const Experiencia = () => {
   return (
     <section>
-      <h2>Experiencia Laboral y Proyectos</h2>
-      {experiencias.map((exp, index) => (
-        <div key={index} style={{ marginBottom: '1rem' }}>
-          <h3>{exp.cargo} - {exp.empresa}</h3>
-          <p><strong>Año:</strong> {exp.año}</p>
-          <p>{exp.descripcion}</p>
-        </div>
-      ))}
+      <h3>Experiencia Profesional</h3>
+      <ul>
+        {experiencia.map((exp) => (
+          <li key={exp.id}>
+            <strong>{exp.puesto}</strong> - {exp.empresa} ({exp.periodo})
+          </li>
+        ))}
+      </ul>
     </section>
   );
-};
+}
 
-export default Experiencia;
+
 
