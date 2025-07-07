@@ -1,27 +1,19 @@
-import React from 'react';
+export default function Educacion({ estudios }) {
+  const educacion = [
+    { id: 1, titulo: "Ingeniería en Sistemas", universidad: "Universidad Nacional", periodo: "2020-2024" }
+  ];
 
-const formacion = [
-  { institucion: "SENA", curso: "Tecnólogo en Análisis y Desarrollo de Software", año: "2025" },
-  { institucion: "Platzi", curso: "Curso Profesional de React", año: "2024" },
-  { institucion: "FreeCodeCamp", curso: "Responsive Web Design", año: "2023" },
-  { institucion: "Coursera", curso: "Fundamentos de UX/UI", año: "2022" },
-  { institucion: "Alura Latam", curso: "React + Hooks", año: "2023" },
-  { institucion: "Google Actívate", curso: "Marketing Digital", año: "2021" },
-];
-
-const Educacion = () => {
   return (
     <section>
-      <h2>Formación Académica</h2>
+      <h3>Educación</h3>
       <ul>
-        {formacion.map((edu, index) => (
-          <li key={index}>
-            <strong>{edu.institucion}</strong> - {edu.curso} ({edu.año})
+        {educacion.map((edu) => (
+          <li key={edu.id}>
+            <strong>{edu.titulo}</strong> - {edu.universidad} ({edu.periodo})
           </li>
         ))}
       </ul>
     </section>
   );
-};
+}
 
-export default Educacion;
