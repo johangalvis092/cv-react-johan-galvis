@@ -1,9 +1,14 @@
-export default function CabeceraCV() {
+// src/components/CabeceraCV.jsx
+import React from "react";
+
+export default function CabeceraCV({ nombre, profesion }) {
   return (
-    <header style={{ backgroundColor: '#1a73e8', color: 'white', padding: '1rem', borderRadius: '8px' }}>
-      <h1>Johan Galvis</h1>
+    <header>
+       <h1>Johan Galvis </h1>
       <h2>Desarrollador Front-End Jr.</h2>
-      <p>📞 320 123 4567 | 📧 johan.galvis@email.com | 📍 Bogotá</p>
+      <h2>Correo: johangalvis102@gmail.com</h2>
+      <h3>Teléfono: 3026494779</h3>
+      <h3>Ciudad: medellin, Colombia</h3>
     </header>
   );
 }
