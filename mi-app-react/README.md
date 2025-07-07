@@ -9,5 +9,6 @@ Este proyecto es una hoja de vida modular creada en React con Vite. Incluye rend
 ## Instalación
 
 ```bash
+cd mi-app-react
 npm install
 npm run dev
