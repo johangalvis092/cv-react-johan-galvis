@@ -1,45 +1,35 @@
-import React from 'react';
+export default function StackTecnologias() {
+  const tecnologias = [
+    { id: 1, nombre: "React", tipo: "frontend" },
+    { id: 2, nombre: "Node.js", tipo: "backend" },
+    { id: 3, nombre: "JavaScript", tipo: "frontend" },
+    { id: 4, nombre: "PostgreSQL", tipo: "base de datos" }
+  ];
 
-const tecnologias = ["HTML", "CSS", "JavaScript", "React", "Node.js", "MongoDB", "Git", "Vite", "Tailwind", "Figma"];
+  // Función para asignar colores según el tipo de tecnología
+  const obtenerColor = (tipo) => {
+    switch (tipo) {
+      case "frontend":
+        return "skyblue";
+      case "backend":
+        return "	Charcoal / Jet Black";
+      case "base de datos":
+        return "gold3";
+      default:
+        return "gray";
+    }
+  };
 
-const getColor = (tecnologia) => {
-  switch (tecnologia) {
-    case "JavaScript": return "#f7df1e";
-    case "React": return "#61dafb";
-    case "Node.js": return "#68a063";
-    case "MongoDB": return "#4db33d";
-    case "Git": return "#f34f29";
-    case "Vite": return "#646cff";
-    case "Tailwind": return "#38bdf8";
-    case "HTML": return "#e34c26";
-    case "CSS": return "#264de4";
-    case "Figma": return "#a259ff";
-    default: return "#ccc";
-  }
-};
-
-const StackTecnologias = () => {
   return (
     <section>
-      <h2>Stack de Tecnologías</h2>
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
-        {tecnologias.map((tech, index) => (
-          <span
-            key={index}
-            style={{
-              backgroundColor: getColor(tech),
-              color: '#fff',
-              padding: '5px 10px',
-              borderRadius: '10px',
-              fontWeight: 'bold',
-            }}
-          >
-            {tech}
-          </span>
+      <h3>Stack de Tecnologías</h3>
+      <ul>
+        {tecnologias.map((tech) => (
+          <li key={tech.id} style={{ color: obtenerColor(tech.tipo) }}>
+            {tech.nombre} - <em>{tech.tipo}</em>
+          </li>
         ))}
-      </div>
+      </ul>
     </section>
   );
-};
-
-export default StackTecnologias;
+}
